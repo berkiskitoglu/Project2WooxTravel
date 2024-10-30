@@ -1,0 +1,53 @@
+﻿@model List<MY2.Entities.Category>
+
+
+@{
+    ViewBag.Title = "CategoryList";
+    Layout = "~/Areas/Admin/Views/_AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Tables</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Kategori ID</th>
+                                    <th scope="col">Kategori ADI</th>
+                                    <th scope="col">SİL</th>
+                                    <th scope="col">GÜNCELLE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.CategoryID</td>
+                                        <td>@item.CategoryName</td>
+                                        <td><a href="/Admin/Category/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/Category/UpdateCategory/@item.CategoryID" class="btn btn-warning">Güncelle</a></td>
+                                    </tr>
+
+                                }
+                            </tbody>
+
+                        </table>
+                        <a href="/Admin/Category/CreateCategory" class="btn btn-primary">Yeni Kategori Girişi</a>
+                    </div>
+   
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+</div>

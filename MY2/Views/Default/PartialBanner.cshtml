@@ -1,0 +1,74 @@
+﻿@model List<MY2.Entities.Destination>
+
+
+<section id="section-1">
+    <style>
+        .nowrap {
+            white-space: nowrap;
+        }
+
+    </style>
+    <div class="content-slider">
+        <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
+        <input type="radio" id="banner2" class="sec-1-input" name="banner">
+        <input type="radio" id="banner3" class="sec-1-input" name="banner">
+        <input type="radio" id="banner4" class="sec-1-input" name="banner">
+
+        <div class="slider">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                var item = Model[i];
+                <div id="top-banner-@(i + 1)" class="banner"
+                     style="background-image: url('@Url.Content(item.ImageUrl)'); background-size: cover; background-position: center center;">
+                    <div class="banner-inner-wrapper header-text">
+                        <div class="main-caption">
+                            <h2>Büyüleyici Turların Kapılarını Aralayın</h2>
+                            <h1>@item.Title</h1>
+                            <div class="border-button"><a href="/Default/TurDetay/@item.DestinationID">Oraya Git</a></div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="more-info">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-sm-6 col-6">
+                                                <i class="fa fa-user"></i>
+                                                <h4><span>Tur Kapasitesi:</span><br>@item.Capacity Kişi</h4>
+                                            </div>
+                                            <div class="col-lg-3 col-sm-6 col-6">
+                                                <i class="fa fa-map-location"></i>
+                                                <h4 class="nowrap"><span>Tur Rotası:</span><br>@item.Country</h4>
+                                            </div>
+                                            <div class="col-lg-3 col-sm-6 col-6">
+                                                <i class="fa fa-globe"></i>
+                                                <h4 class="nowrap"><span>Tur Süresi:</span><br>@item.DayNight Gün - @(item.DayNight - 1) Gece</h4>
+                                            </div>
+                                            <div class="col-lg-3 col-sm-6 col-6">
+                                                <i class="fa fa-home"></i>
+                                                <h4><span>Tur Fiyatı:</span><br>@item.Price.ToString("0") ₺</h4>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+
+        <nav>
+            <div class="controls">
+                @for (int i = 1; i <= 4; i++)
+                {
+                    <label for="banner@(i)"><span class="progressbar"><span class="progressbar-fill"></span></span><span class="text">@i</span></label>  
+                }      
+            </div>
+        </nav>
+    </div>
+
+
+</section>
+

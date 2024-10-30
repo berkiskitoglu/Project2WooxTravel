@@ -1,0 +1,202 @@
+﻿@model MY2.Entities.Reservation
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>WoOx Travel Reservation Page</title>
+    <link href="~/wooxtravel-1.0.0/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/wooxtravel-1.0.0/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="~/wooxtravel-1.0.0/assets/css/templatemo-woox-travel.css">
+    <link rel="stylesheet" href="~/wooxtravel-1.0.0/assets/css/owl.css">
+    <link rel="stylesheet" href="~/wooxtravel-1.0.0/assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+
+
+<body>
+
+
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+
+                        <a href="index.html" class="logo">
+                            <img src="assets/images/logo.png" alt="">
+                        </a>
+
+                        <ul class="nav">
+                            <li><a href="/Default/Index/" class="active">Ana Sayfa</a></li>
+                            <li><a href="/Default/TurRezervasyon/">Rezervasyon Yap</a></li>
+                            <li><a href="/Default/KayıtOl/">Kayıt Ol</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="second-page-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>
+                        Tur Rezervasyonunu Buradan Yapın
+
+                    </h4>
+                    <h2>Rezervasyonunu Yap</h2>
+                    <p>Hayalinizdeki tatili gerçekleştirin! Konforlu otellerde konaklama, rehberli turlar ve bölgenin eşsiz güzelliklerini keşfetme fırsatı sunan seyahat paketlerimizle tanışın. Erken rezervasyonla özel indirimleri kaçırmayın ve unutulmaz anılar biriktirin</p>
+
+                    <div class="main-button">
+                        <button class="btn" data-toggle="modal" data-target="#Modal1" style="border-radius:10px; color:white; background-color:#2ebbbf ">Rezervasyon Yap</button>
+                    </div>
+
+
+                    <div class="modal" id="Modal1" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: #2ebbbf; color: white; ">
+                                    <h3 class="modal-title" style="margin-left:110px">Rezervasyon Kaydı</h3>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form method="post">
+                                    <div class="modal-body">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="Name">İsminizi Giriniz</label>
+                                                @Html.TextBoxFor(x => x.Name, new { @class = "form-control", id = "Name", required = "required", maxlength = "20" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="Phone">Telefon Numaranız</label>
+                                                @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", id = "Phone", required = "required", maxlength = "15" })
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="GuestCount">Kişi Sayısı</label>
+                                                @Html.TextBoxFor(x => x.PersonCount, new { @class = "form-control", id = "GuestCount", required = "required", type = "number", min = "1", pattern = @"[0-9]*" })
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="ReservationDate">Tarih</label>
+                                                @Html.EditorFor(x => x.ReservationDate, new { htmlAttributes = new { @class = "form-control", type = "date", required = "required", id = "ReservationDate" } })
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="Description">Açıklama</label>
+                                            @Html.TextAreaFor(x => x.Description, 5, 0, new { @class = "form-control", id = "Description", style = "resize: none;" })
+                                        </div>
+                                    </div>
+
+
+                                    <button type="submit" class="btn btn-primary" style="margin-bottom:10px">Rezervasyon Oluştur</button>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div id="js-preloader" class="js-preloader">
+                        <div class="preloader-inner">
+                            <span class="dot"></span>
+                            <div class="dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="more-info reservation-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="info-item">
+                        <i class="fa fa-phone"></i>
+                        <h4>Telefon Görüşmesi Yap</h4>
+                        <a href="#">+123 456 789 (0)</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="info-item">
+                        <i class="fa fa-envelope"></i>
+                        <h4>Email üzerinden İletişime Geç</h4>
+                        <a href="#">company@email.com</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="info-item">
+                        <i class="fa fa-map-marker"></i>
+                        <h4>Ofisimizi Ziyaret Et</h4>
+                        <a href="#">
+                            İstiklal Caddesi Beyoğlu, İstanbul/Türkiye
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/wooxtravel-1.0.0/vendor/jquery/jquery.min.js"></script>
+    <script src="~/wooxtravel-1.0.0/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="~/wooxtravel-1.0.0/assets/js/isotope.min.js"></script>
+    <script src="~/wooxtravel-1.0.0/assets/js/owl-carousel.js"></script>
+    <script src="~/wooxtravel-1.0.0/assets/js/wow.js"></script>
+    <script src="~/wooxtravel-1.0.0/assets/js/tabs.js"></script>
+    <script src="~/wooxtravel-1.0.0/assets/js/popup.js"></script>
+    <script src="~/wooxtravel-1.0.0/assets/js/custom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(".option").click(function () {
+            $(".option").removeClass("active");
+            $(this).addClass("active");
+        });</script>
+
+</body>
+
+</html>

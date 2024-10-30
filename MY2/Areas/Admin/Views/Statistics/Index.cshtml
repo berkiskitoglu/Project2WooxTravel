@@ -1,0 +1,227 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/_AdminLayout/Index.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .card {
+            height: 100%; 
+        }
+
+        .card-body {
+            display: flex;
+            align-items: center; 
+            justify-content: flex-start; 
+        }
+
+        .icon-big {
+            margin-right: 15px; 
+        }
+
+        .numbers {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-inner">
+
+            <div class="row d-flex align-items-stretch">
+                <div class="col-sm-6 col-md-3">
+                    <div class="card card-stats card-primary card-round">
+                        <div class="card-body">
+                            <div class="icon-big text-center">
+                                <i class="fas fa-user-lock"></i>
+                            </div>
+                            <div class="numbers">
+                                <p class="card-category">Sistemdeki Aktif Admin Sayısı</p>
+                                <h4 class="card-title">@ViewBag.AdminCount</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card card-stats card-info card-round">
+                        <div class="card-body">
+                            <div class="icon-big text-center">
+                                <i class="fas fa-tags"></i>
+                            </div>
+                            <div class="numbers">
+                                <p class="card-category">Toplam Kategori Sayısı</p>
+                                <h4 class="card-title">@ViewBag.CategoryCount</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card card-stats card-success card-round">
+                        <div class="card-body">
+                            <div class="icon-big text-center">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="numbers">
+                                <p class="card-category">Toplam Destinasyon Sayısı</p>
+                                <h4 class="card-title">@ViewBag.DestinationCount</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card card-stats card-secondary card-round">
+                        <div class="card-body">
+                            <div class="icon-big text-center">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="numbers">
+                                <p class="card-category">Toplam Rezervasyon Sayısı</p>
+                                <h4 class="card-title">@ViewBag.ReservationCount</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row d-flex align-items-stretch" style="margin-top: 20px;">
+                <div class="col-sm-6 col-md-3">
+                    <div class="card card-stats card-warning card-round">
+                        <div class="card-body">
+                            <div class="icon-big text-center">
+                                <i class="fas fa-inbox"></i>
+                            </div>
+                            <div class="numbers">
+                                <p class="card-category">Gelen Toplam Mesaj Sayısı</p>
+                                <h4 class="card-title">@ViewBag.InboxMessageCount</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card card-stats card-danger card-round">
+                        <div class="card-body">
+                            <div class="icon-big text-center">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <div class="numbers">
+                                <p class="card-category">Gönderilen Mesaj Sayısı</p>
+                                <h4 class="card-title">@ViewBag.SendBoxMessageCount</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card card-stats card-purple card-round">
+                        <div class="card-body">
+                            <div class="icon-big text-center">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div class="numbers">
+                                <p class="card-category">Ortalama Tur Fiyatı</p>
+                                <h4 class="card-title">@ViewBag.AveragePrice₺</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card card-stats card-teal card-round">
+                        <div class="card-body">
+                            <div class="icon-big text-center">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="numbers">
+                                <p class="card-category">En Pahalı Turumuz</p>
+                                <h4 class="card-title">@ViewBag.ExpensiveDestination₺</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row d-flex align-items-stretch" style="margin-top: 20px;">
+                <div class="col-sm-6 col-md-3 d-flex justify-content-center">
+                    <div class="card card-stats card-round">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-icon">
+                                    <div class="icon-big text-center icon-primary bubble-shadow-small">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-stats ms-3 ms-sm-0">
+                                    <div class="numbers">
+                                        <p class="card-category">Max. Tur Kapasite</p>
+                                        <h4 class="card-title">@ViewBag.maximumTourCapacity</h4> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 d-flex justify-content-center">
+                    <div class="card card-stats card-round">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-icon">
+                                    <div class="icon-big text-center icon-info bubble-shadow-small">
+                                        <i class="fas fa-user-check"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-stats ms-3 ms-sm-0">
+                                    <div class="numbers">
+                                        <p class="card-category">Min. Tur Kapasite</p>
+                                        <h4 class="card-title">@ViewBag.shortestTourCapacity</h4> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 d-flex justify-content-center">
+                    <div class="card card-stats card-round">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-icon">
+                                    <div class="icon-big text-center icon-success bubble-shadow-small">
+                                        <i class="fas fa-luggage-cart"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-stats ms-3 ms-sm-0">
+                                    <div class="numbers">
+                                        <p class="card-category">En Uzun Tur</p>
+                                        <h4 class="card-title">@ViewBag.LongestTour</h4> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 d-flex justify-content-center">
+                    <div class="card card-stats card-round">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-icon">
+                                    <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                                        <i class="far fa-check-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-stats ms-3 ms-sm-0">
+                                    <div class="numbers">
+                                        <p class="card-category">En Kısa Tur</p>
+                                        <h4 class="card-title">@ViewBag.ShortestTour Gün</h4> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

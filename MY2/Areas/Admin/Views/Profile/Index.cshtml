@@ -1,0 +1,37 @@
+﻿@model MY2.Entities.Admin
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/_AdminLayout/Index.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Basic Table</div>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <label>Adınız:</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    <br />
+                    <label>Soyadınız:</label>
+                    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+                    <br />
+                    <label>Email Adresiniz:</label>
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                    <br />
+                    <label>Kullanıcı Adınız:</label>
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                    <br />
+                    <label>Şifreniz:</label>
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                    <br />                              
+                    <button class="btn btn-success">Bilgileri Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
